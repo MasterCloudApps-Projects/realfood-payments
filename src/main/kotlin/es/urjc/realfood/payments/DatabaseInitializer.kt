@@ -4,13 +4,11 @@ import es.urjc.realfood.payments.domain.Balance
 import es.urjc.realfood.payments.domain.Client
 import es.urjc.realfood.payments.domain.ClientId
 import es.urjc.realfood.payments.domain.repository.ClientRepository
-import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 import java.util.*
 import javax.annotation.PostConstruct
 
 @Component
-@Profile("local")
 class DatabaseInitializer(
     private val clientRepository: ClientRepository
 ) {
