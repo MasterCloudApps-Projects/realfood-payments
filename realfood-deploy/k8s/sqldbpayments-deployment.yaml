@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqldbpayments
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sqldbpayments
+  template:
+    metadata:
+      labels:
+        app: sqldbpayments
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_DB
+          value: realfood-payments
+        - name: POSTGRES_PASSWORD
+          value: root
+        - name: POSTGRES_USER
+          value: root
+        image: postgres
+        imagePullPolicy: IfNotPresent
+        name: sqldbpayments
+        ports:
+        - containerPort: 5432
+      restartPolicy: Always

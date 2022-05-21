@@ -1,0 +1,33 @@
+version: "3"
+services:
+  payments:
+    container_name: realfoodpayments
+    image: cloudappsteam/es.urjc.realfood.payments:0.3.0
+    environment:
+      - DATABASE_HOST=sqldbpayments
+      - DATABASE_PORT=5432
+      - DATABASE_DB=realfood-payments
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+    expose:
+      - "8082"
+  sqldbpayments:
+    container_name: sqldbpayments
+    image: postgres
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=realfood-payments
+    expose:
+      - "5432"
+    volumes:
+      - ./docker/postgres:/var/lib/postgresql/data
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.8.14-management-alpine
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    expose:
+      - "5672"
+      - "15672"
