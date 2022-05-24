@@ -26,3 +26,7 @@ spec:
         ports:
         - containerPort: 5432
       restartPolicy: Always
+      volumes:
+        - name: sqldbpayments-persistent-storage
+          persistentVolumeClaim:
+            claimName: sqldbpayments-pv-claim
