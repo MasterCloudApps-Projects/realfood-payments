@@ -19,8 +19,8 @@ de [Arquitectura Hexagonal](https://es.wikipedia.org/wiki/Arquitectura_hexagonal
 
 Operaciones disponibles con token de inicio de sesion
 
-    - GET       /api/balance                    Registro
-    - POST      /api/balance                    Recargar saldo
+        - GET       /api/balance                Registro
+        - POST      /api/balance                Recargar saldo
 
 Operación de Publicación/Suscripción que ejecuta el servicio:
 
@@ -28,6 +28,7 @@ Operación de Publicación/Suscripción que ejecuta el servicio:
 
         - [Consume] Payment request             Intento de pago de un pedido
         - [Consume] Register request            Registro de un nuevo usuario
+        - [Consume] Delete user request         Borrado de un usuario
 
 Diagrama de clases del dominio de la aplicacion:
 
