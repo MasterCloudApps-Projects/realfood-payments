@@ -19,7 +19,7 @@ de [Arquitectura Hexagonal](https://es.wikipedia.org/wiki/Arquitectura_hexagonal
 
 Operaciones disponibles con token de inicio de sesion
 
-        - GET       /api/balance                Registro
+        - GET       /api/balance                Consultar saldo
         - POST      /api/balance                Recargar saldo
 
 Operación de Publicación/Suscripción que ejecuta el servicio:
