@@ -23,6 +23,26 @@ Operación de Publicación/Suscripción que ejecuta el servicio:
 
         - [Consume] Payment request             Intento de pago de un pedido
 
+Modelo de datos:
+
+```mermaid
+classDiagram
+class Client
+class ClientId
+class Balance
+
+Client *-- ClientId : -id
+Client *-- Balance : -balance
+
+class Payment
+class PaymentId
+class Quantity
+
+Payment *-- PaymentId : -id
+Payment *-- Quantity : -quantity
+Payment o-- Client : -client
+```
+
 Ejemplo de diagrama de clases para el caso de uso UpdateBalance:
 
 ```mermaid
