@@ -17,13 +17,19 @@ de los siguientes componentes:
 Estos servicios se ha desarrollado siguiendo el estilo
 de [Arquitectura Hexagonal](https://es.wikipedia.org/wiki/Arquitectura_hexagonal_(software))
 
+Operaciones disponibles con token de inicio de sesion
+
+    - GET       /api/balance                    Registro
+    - POST      /api/balance                    Recargar saldo
+
 Operación de Publicación/Suscripción que ejecuta el servicio:
 
         - [Publish] Payment response            Resolucion en el pago de un pedido
 
         - [Consume] Payment request             Intento de pago de un pedido
+        - [Consume] Register request            Registro de un nuevo usuario
 
-Modelo de datos:
+Diagrama de clases del dominio de la aplicacion:
 
 ```mermaid
 classDiagram
