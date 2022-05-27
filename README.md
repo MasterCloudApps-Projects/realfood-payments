@@ -45,37 +45,7 @@ Payment o-- Client : -client
 
 Ejemplo de diagrama de clases para el caso de uso UpdateBalance:
 
-```mermaid
-classDiagram
-    class PaymentEventRabbitConsumer
-    class UpdateBalance
-    class ClientRepository{
-        <<interface>>
-    }
-    class PaymentRepository{
-        <<interface>>
-    }
-    
-    class PostgresClientRepository
-    class PostgresPaymentRepository
-    
-    class JpaClientRepository{
-        <<interface>>
-    }
-    class JpaPaymentRepository{
-        <<interface>>
-    }
-
-    PaymentEventRabbitConsumer ..> UpdateBalance
-    UpdateBalance ..> ClientRepository
-    UpdateBalance ..> PaymentRepository
-    
-    PostgresClientRepository ..> JpaClientRepository
-    PostgresPaymentRepository ..> JpaPaymentRepository
-    
-    PostgresClientRepository ..|> ClientRepository
-    PostgresPaymentRepository ..|> PaymentRepository
-```
+![alt text](https://github.com/MasterCloudApps-Projects/realfood-payments/blob/main/class-diagram-payments.png)
 
 ## Despliegue
 
