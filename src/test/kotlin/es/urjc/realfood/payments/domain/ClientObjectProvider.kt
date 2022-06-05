@@ -1,5 +1,11 @@
 package es.urjc.realfood.payments.domain
 
+import es.urjc.realfood.payments.domain.services.JWTService.Companion.CLIENT_ROLE
+import io.jsonwebtoken.Jwts
+import io.jsonwebtoken.SignatureAlgorithm
+import java.time.Instant
+import java.util.*
+
 class ClientObjectProvider {
 
     companion object {
@@ -30,6 +36,19 @@ class ClientObjectProvider {
             )
         }
 
+        fun validJwt(): String {
+            return Jwts.builder()
+                .setIssuedAt(Date.from(Instant.now()))
+                .setSubject(validClientIdString())
+                .setIssuer("realfood-auth")
+                .setExpiration(Date.from(Instant.now().plusSeconds(1800)))
+                .addClaims(mapOf("role" to CLIENT_ROLE))
+                .signWith(
+                    SignatureAlgorithm.HS256,
+                    Base64.getEncoder().encodeToString("1234".encodeToByteArray()).toString()
+                )
+                .compact()
+        }
 
     }
 
