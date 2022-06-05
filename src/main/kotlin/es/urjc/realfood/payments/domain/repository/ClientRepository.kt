@@ -9,4 +9,6 @@ interface ClientRepository {
 
     fun findById(id: ClientId): Client?
 
+    fun delete(client: Client)
+
 }
