@@ -18,6 +18,8 @@ jobs:
           java-version: 11
       - name: Run unitary test
         run: mvn -B -Dtest="es/urjc/realfood/payments/unit/*" -DfailIfNoTests=false test
+      - name: Run integration test
+        run: mvn -B -Dtest="es/urjc/realfood/payments/integration/*" -DfailIfNoTests=false test
 
   publish-docker-image:
     name: Upload Docker Image
