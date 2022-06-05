@@ -17,7 +17,7 @@ de los siguientes componentes:
 Estos servicios se ha desarrollado siguiendo el estilo
 de [Arquitectura Hexagonal](https://es.wikipedia.org/wiki/Arquitectura_hexagonal_(software))
 
-Operaciones disponibles con token de inicio de sesion
+Operaciones disponibles con token de inicio de sesión
 
         - GET       /api/balance                Consultar saldo
         - POST      /api/balance                Recargar saldo
@@ -27,10 +27,10 @@ Operación de Publicación/Suscripción que ejecuta el servicio:
         - [Publish] Payment response            Resolucion en el pago de un pedido
 
         - [Consume] Payment request             Intento de pago de un pedido
-        - [Consume] Register request            Registro de un nuevo usuario
-        - [Consume] Delete user request         Borrado de un usuario
+        - [Consume] Register request            Registro de un nuevo cliente
+        - [Consume] Delete client request       Borrado de un cliente
 
-Diagrama de clases del dominio de la aplicacion:
+Diagrama de clases del dominio de la aplicación:
 
 ```mermaid
 classDiagram
