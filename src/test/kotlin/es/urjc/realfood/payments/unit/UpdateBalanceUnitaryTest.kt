@@ -23,7 +23,7 @@ import org.springframework.boot.test.context.SpringBootTest
     ]
 )
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class UpdateOrderStatusUnitaryTest : UpdateBalanceTest() {
+class UpdateBalanceUnitaryTest : UpdateBalanceTest() {
 
     lateinit var clientRepository: ClientRepository
     lateinit var paymentRepository: PaymentRepository

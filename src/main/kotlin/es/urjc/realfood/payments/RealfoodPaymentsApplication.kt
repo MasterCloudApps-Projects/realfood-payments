@@ -13,6 +13,11 @@ class RealfoodPaymentsApplication {
         return Queue("checkout-cart", false)
     }
 
+    @Bean
+    fun registers(): Queue {
+        return Queue("register-queue", false)
+    }
+
 }
 
 fun main(args: Array<String>) {

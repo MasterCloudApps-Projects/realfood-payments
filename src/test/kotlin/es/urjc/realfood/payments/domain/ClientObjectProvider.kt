@@ -23,6 +23,13 @@ class ClientObjectProvider {
             )
         }
 
+        fun validNewClient(): Client {
+            return Client(
+                id = validClientId(),
+                balance = Balance(0.0)
+            )
+        }
+
 
     }
 
