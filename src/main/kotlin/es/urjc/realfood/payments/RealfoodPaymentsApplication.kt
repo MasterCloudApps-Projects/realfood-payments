@@ -18,6 +18,11 @@ class RealfoodPaymentsApplication {
         return Queue("register-queue", false)
     }
 
+    @Bean
+    fun deletions(): Queue {
+        return Queue("delete-client-queue", false)
+    }
+
 }
 
 fun main(args: Array<String>) {
