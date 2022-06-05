@@ -14,4 +14,6 @@ class PostgresClientRepository(
 
     override fun findById(id: ClientId): Client? = jpaRepository.findById(id).orElse(null)
 
+    override fun delete(client: Client) = jpaRepository.delete(client)
+
 }
