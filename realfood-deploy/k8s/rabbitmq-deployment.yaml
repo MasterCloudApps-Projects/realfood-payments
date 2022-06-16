@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rabbitmq
+  name: realfood-rabbitmq
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: rabbitmq
+      app: realfood-rabbitmq
   template:
     metadata:
       labels:
-        app: rabbitmq
+        app: realfood-rabbitmq
     spec:
       containers:
       - env:
@@ -20,12 +20,12 @@ spec:
           value: guest
         image: rabbitmq:3.8.14-management-alpine
         imagePullPolicy: IfNotPresent
-        name: rabbitmq
+        name: realfood-rabbitmq
         ports:
         - containerPort: 5672
         - containerPort: 15672
       restartPolicy: Always
       volumes:
-        - name: rabbitmq-persistent-storage
+        - name: realfood-rabbitmq-persistent-storage
           persistentVolumeClaim:
-            claimName: rabbitmq-pv-claim
+            claimName: realfood-rabbitmq-pv-claim

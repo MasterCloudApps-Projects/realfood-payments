@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: payments-service
+  name: realfood-payments-service
 spec:
   type: ClusterIP
   ports:
@@ -9,4 +9,4 @@ spec:
     port: 8082
     targetPort: 8082
   selector:
-    app: payments
+    app: realfood-payments-app

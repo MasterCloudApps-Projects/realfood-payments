@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payments
+  name: realfood-payments-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: payments
+      app: realfood-payments-app
   template:
     metadata:
       labels:
-        app: payments
+        app: realfood-payments-app
     spec:
       containers:
       - env:
         - name: DATABASE_DB
-          value: realfood-payments
+          value: "realfood-payments"
         - name: DATABASE_HOST
-          value: sqldbpayments
+          value: "realfood-payments-postgres"
         - name: DATABASE_PORT
           value: "5432"
         - name: RABBITMQ_HOST
-          value: rabbitmq
+          value: "realfood-rabbitmq"
         - name: RABBITMQ_PORT
           value: "5672"
         image: cloudappsteam/es.urjc.realfood.payments:1.0.0
         imagePullPolicy: IfNotPresent
-        name: realfoodpayments
+        name: "realfood-payments"
         ports:
         - containerPort: 8082
       restartPolicy: Always

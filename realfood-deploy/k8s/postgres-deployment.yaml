@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: realfood-payments-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: realfood-payments-postgres
+  template:
+    metadata:
+      labels:
+        app: realfood-payments-postgres
+    spec:
+      containers:
+        - env:
+            - name: POSTGRES_DB
+              value: "realfood-payments"
+            - name: POSTGRES_PASSWORD
+              value: "root"
+            - name: POSTGRES_USER
+              value: "root"
+          image: postgres
+          imagePullPolicy: IfNotPresent
+          name: realfood-payments-postgres
+          ports:
+            - containerPort: 5432
+      restartPolicy: Always
+      volumes:
+        - name: realfood-payments-postgres-persistent-storage
+          persistentVolumeClaim:
+            claimName: realfood-payments-postgres-pv-claim
