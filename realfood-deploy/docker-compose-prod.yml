@@ -2,7 +2,7 @@ version: "3"
 services:
   payments:
     container_name: realfoodpayments
-    image: cloudappsteam/es.urjc.realfood.payments:1.0.0
+    image: cloudappsteam/es.urjc.realfood.payments:1.0.1
     environment:
       - DATABASE_HOST=sqldbpayments
       - DATABASE_PORT=5432
