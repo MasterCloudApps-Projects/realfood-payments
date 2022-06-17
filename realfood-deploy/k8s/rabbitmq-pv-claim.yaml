@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: rabbitmq-pv-claim
+  name: realfood-rabbitmq-pv-claim
   labels:
-    app: rabbitmq
+    app: realfood-rabbitmq
 spec:
-  storageClassName: "rabbitmq-sc"
+  storageClassName: "realfood-rabbitmq-sc"
   accessModes:
     - ReadWriteOnce
   resources:

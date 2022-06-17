@@ -1,12 +1,12 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: rabbitmq-pv
+  name: realfood-rabbitmq-pv
 spec:
-  storageClassName: rabbitmq-sc
+  storageClassName: realfood-rabbitmq-sc
   accessModes:
     - ReadWriteOnce
   capacity:
     storage: 1Gi
   hostPath:
-    path: /rabbitmq-data
+    path: /realfood-rabbitmq-data

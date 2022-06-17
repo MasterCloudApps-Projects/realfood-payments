@@ -1,6 +1,7 @@
 package es.urjc.realfood.payments.infrastructure.external
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import es.urjc.realfood.payments.application.DeleteClient
 import es.urjc.realfood.payments.application.DeleteClientRequest
 import org.slf4j.LoggerFactory
@@ -15,7 +16,7 @@ class DeletionEventRabbitConsumer(
     private val logger = LoggerFactory.getLogger(DeletionEventRabbitConsumer::class.java)
 
     private val objectMapper = ObjectMapper()
-
+        .registerKotlinModule()
     @RabbitListener(queues = ["delete-client-queue"])
     private fun consume(message: String) {
         val deletionEvent = objectMapper.readValue(message, DeletionEvent::class.java)

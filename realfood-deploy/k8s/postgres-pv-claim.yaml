@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sqldbpayments-pv-claim
+  name: realfood-payments-postgres-pv-claim
   labels:
-    app: sqldbpayments
+    app: realfood-payments-postgres
 spec:
-  storageClassName: "sqldbpayments-sc"
+  storageClassName: "realfood-payments-postgres-sc"
   accessModes:
     - ReadWriteOnce
   resources:

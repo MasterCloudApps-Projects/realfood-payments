@@ -1,6 +1,7 @@
 package es.urjc.realfood.payments.infrastructure.external
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import es.urjc.realfood.payments.application.SendEventRequest
 import es.urjc.realfood.payments.application.SendPayment
 import es.urjc.realfood.payments.application.UpdateBalance
@@ -18,6 +19,7 @@ class PaymentEventRabbitConsumer(
     private val logger = LoggerFactory.getLogger(PaymentEventRabbitConsumer::class.java)
 
     private val objectMapper = ObjectMapper()
+        .registerKotlinModule()
 
     @RabbitListener(queues = ["checkout-cart"], ackMode = "AUTO")
     private fun consume(message: String) {

@@ -1,12 +1,12 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: sqldbpayments-pv
+  name: realfood-payments-postgres-pv
 spec:
-  storageClassName: sqldbpayments-sc
+  storageClassName: realfood-payments-postgres-sc
   accessModes:
     - ReadWriteOnce
   capacity:
     storage: 1Gi
   hostPath:
-    path: /sqldbpayments-data
+    path: /realfood-payments-postgres-data

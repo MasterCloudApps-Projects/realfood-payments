@@ -1,6 +1,7 @@
 package es.urjc.realfood.payments.infrastructure.external
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import es.urjc.realfood.payments.application.RegisterClient
 import es.urjc.realfood.payments.application.RegisterClientRequest
 import org.slf4j.LoggerFactory
@@ -15,7 +16,7 @@ class RegisterEventRabbitConsumer(
     private val logger = LoggerFactory.getLogger(RegisterEventRabbitConsumer::class.java)
 
     private val objectMapper = ObjectMapper()
-
+        .registerKotlinModule()
     @RabbitListener(queues = ["register-queue"])
     private fun consume(message: String) {
         val registerEvent = objectMapper.readValue(message, RegisterEvent::class.java)
