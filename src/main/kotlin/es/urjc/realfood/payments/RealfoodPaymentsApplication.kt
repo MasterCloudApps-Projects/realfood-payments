@@ -10,17 +10,17 @@ class RealfoodPaymentsApplication {
 
     @Bean
     fun payments(): Queue {
-        return Queue("checkout-cart", false)
+        return Queue("checkout-cart")
     }
 
     @Bean
     fun registers(): Queue {
-        return Queue("register-queue", false)
+        return Queue("register-queue")
     }
 
     @Bean
     fun deletions(): Queue {
-        return Queue("delete-client-queue", false)
+        return Queue("delete-client-queue")
     }
 
 }
